@@ -1,5 +1,6 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Products.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace Products
     {
         private Dictionary<string, decimal> productPrices = new Dictionary<string, decimal>()
         {
-            { "Product 1", 10.99m },
+            { "Labial Maybelline", 110.99m },
             { "Product 2", 15.99m },
             { "Product 3", 8.50m },
             { "Product 4", 9.50m },
@@ -46,7 +47,7 @@ namespace Products
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string productName = "Product 1";
+            string productName = "Labial Maybelline";
             decimal productPrice = productPrices[productName];
             int quantity;
 
@@ -548,7 +549,7 @@ namespace Products
                 MessageBox.Show($"Error creating PDF: {ex.Message}");
             }
 
-    }
+        }
 
 }
 }
