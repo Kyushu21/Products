@@ -21,6 +21,12 @@ namespace Products
             { "Product 1", 10.99m },
             { "Product 2", 15.99m },
             { "Product 3", 8.50m },
+            { "Product 4", 9.50m },
+            { "Product 5", 11.99m },
+            { "Product 6", 12.99m },
+            { "Product 7", 13.50m },
+            { "Product 8", 14.50m },
+            { "Product 9", 16.50m },
             // Agrega más productos y sus precios aquí
         };
 
@@ -160,32 +166,242 @@ namespace Products
 
         private void button4_Click(object sender, EventArgs e)
         {
+            string productName = "Product 4";
+            decimal productPrice = productPrices[productName];
+            int quantity;
 
+            if (int.TryParse(textBox1.Text, out quantity))
+            {
+                decimal subtotal = productPrice * quantity;
+                totalCost += subtotal;
+
+                MessageBox.Show($"Product: {productName}\nQuantity: {quantity}\nSubtotal: {subtotal:C}");
+
+                // Verificar si el producto ya está en el DataGridView
+                bool productExists = false;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells["Product"].Value != null && row.Cells["Product"].Value.ToString() == productName)
+                    {
+                        // Actualizar la cantidad y el subtotal en la fila existente
+                        row.Cells["Quantity"].Value = quantity;
+                        row.Cells["Subtotal"].Value = subtotal;
+                        productExists = true;
+                        break;
+                    }
+                }
+
+                // Si el producto no está en el DataGridView, agregar una nueva fila
+                if (!productExists)
+                {
+                    dataGridView1.Rows.Add(productId, productName, productPrice, quantity, subtotal);
+                    productId++; // Incrementar el Id para el próximo producto
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid quantity. Please enter a valid integer value.");
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            string productName = "Product 5";
+            decimal productPrice = productPrices[productName];
+            int quantity;
 
+            if (int.TryParse(textBox1.Text, out quantity))
+            {
+                decimal subtotal = productPrice * quantity;
+                totalCost += subtotal;
+
+                MessageBox.Show($"Product: {productName}\nQuantity: {quantity}\nSubtotal: {subtotal:C}");
+
+                // Verificar si el producto ya está en el DataGridView
+                bool productExists = false;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells["Product"].Value != null && row.Cells["Product"].Value.ToString() == productName)
+                    {
+                        // Actualizar la cantidad y el subtotal en la fila existente
+                        row.Cells["Quantity"].Value = quantity;
+                        row.Cells["Subtotal"].Value = subtotal;
+                        productExists = true;
+                        break;
+                    }
+                }
+
+                // Si el producto no está en el DataGridView, agregar una nueva fila
+                if (!productExists)
+                {
+                    dataGridView1.Rows.Add(productId, productName, productPrice, quantity, subtotal);
+                    productId++; // Incrementar el Id para el próximo producto
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid quantity. Please enter a valid integer value.");
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            string productName = "Product 6";
+            decimal productPrice = productPrices[productName];
+            int quantity;
 
+            if (int.TryParse(textBox1.Text, out quantity))
+            {
+                decimal subtotal = productPrice * quantity;
+                totalCost += subtotal;
+
+                MessageBox.Show($"Product: {productName}\nQuantity: {quantity}\nSubtotal: {subtotal:C}");
+
+                // Verificar si el producto ya está en el DataGridView
+                bool productExists = false;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells["Product"].Value != null && row.Cells["Product"].Value.ToString() == productName)
+                    {
+                        // Actualizar la cantidad y el subtotal en la fila existente
+                        row.Cells["Quantity"].Value = quantity;
+                        row.Cells["Subtotal"].Value = subtotal;
+                        productExists = true;
+                        break;
+                    }
+                }
+
+                // Si el producto no está en el DataGridView, agregar una nueva fila
+                if (!productExists)
+                {
+                    dataGridView1.Rows.Add(productId, productName, productPrice, quantity, subtotal);
+                    productId++; // Incrementar el Id para el próximo producto
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid quantity. Please enter a valid integer value.");
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            string productName = "Product 7";
+            decimal productPrice = productPrices[productName];
+            int quantity;
 
+            if (int.TryParse(textBox1.Text, out quantity))
+            {
+                decimal subtotal = productPrice * quantity;
+                totalCost += subtotal;
+
+                MessageBox.Show($"Product: {productName}\nQuantity: {quantity}\nSubtotal: {subtotal:C}");
+
+                // Verificar si el producto ya está en el DataGridView
+                bool productExists = false;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells["Product"].Value != null && row.Cells["Product"].Value.ToString() == productName)
+                    {
+                        // Actualizar la cantidad y el subtotal en la fila existente
+                        row.Cells["Quantity"].Value = quantity;
+                        row.Cells["Subtotal"].Value = subtotal;
+                        productExists = true;
+                        break;
+                    }
+                }
+
+                // Si el producto no está en el DataGridView, agregar una nueva fila
+                if (!productExists)
+                {
+                    dataGridView1.Rows.Add(productId, productName, productPrice, quantity, subtotal);
+                    productId++; // Incrementar el Id para el próximo producto
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid quantity. Please enter a valid integer value.");
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            string productName = "Product 8";
+            decimal productPrice = productPrices[productName];
+            int quantity;
 
+            if (int.TryParse(textBox1.Text, out quantity))
+            {
+                decimal subtotal = productPrice * quantity;
+                totalCost += subtotal;
+
+                MessageBox.Show($"Product: {productName}\nQuantity: {quantity}\nSubtotal: {subtotal:C}");
+
+                // Verificar si el producto ya está en el DataGridView
+                bool productExists = false;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells["Product"].Value != null && row.Cells["Product"].Value.ToString() == productName)
+                    {
+                        // Actualizar la cantidad y el subtotal en la fila existente
+                        row.Cells["Quantity"].Value = quantity;
+                        row.Cells["Subtotal"].Value = subtotal;
+                        productExists = true;
+                        break;
+                    }
+                }
+
+                // Si el producto no está en el DataGridView, agregar una nueva fila
+                if (!productExists)
+                {
+                    dataGridView1.Rows.Add(productId, productName, productPrice, quantity, subtotal);
+                    productId++; // Incrementar el Id para el próximo producto
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid quantity. Please enter a valid integer value.");
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
+            string productName = "Product 9";
+            decimal productPrice = productPrices[productName];
+            int quantity;
 
+            if (int.TryParse(textBox1.Text, out quantity))
+            {
+                decimal subtotal = productPrice * quantity;
+                totalCost += subtotal;
+
+                MessageBox.Show($"Product: {productName}\nQuantity: {quantity}\nSubtotal: {subtotal:C}");
+
+                // Verificar si el producto ya está en el DataGridView
+                bool productExists = false;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells["Product"].Value != null && row.Cells["Product"].Value.ToString() == productName)
+                    {
+                        // Actualizar la cantidad y el subtotal en la fila existente
+                        row.Cells["Quantity"].Value = quantity;
+                        row.Cells["Subtotal"].Value = subtotal;
+                        productExists = true;
+                        break;
+                    }
+                }
+
+                // Si el producto no está en el DataGridView, agregar una nueva fila
+                if (!productExists)
+                {
+                    dataGridView1.Rows.Add(productId, productName, productPrice, quantity, subtotal);
+                    productId++; // Incrementar el Id para el próximo producto
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid quantity. Please enter a valid integer value.");
+            }
         }
 
         // Agrega más métodos para los otros botones (button4, button5, etc.) según la cantidad de productos que tengas
@@ -275,8 +491,8 @@ namespace Products
         {
             try
             {
-                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                string directoryPath = Path.Combine(desktopPath, "Reporte PDF");
+                string repositoryPath = @"C:\Users\Baamgo\Documents\GitHub\Products";
+                string directoryPath = Path.Combine(repositoryPath, "Reporte PDF");
                 string fileName = "ticket.pdf";
                 string filePath = Path.Combine(directoryPath, fileName);
                 string imagePath = @"C:\Users\Baamgo\source\repos\Products\Products\Resources\LarissaBeauty.JPG";
@@ -305,6 +521,7 @@ namespace Products
                     rect.BackgroundColor = new iTextSharp.text.BaseColor(242, 216, 223);
                     document.SetPageSize(rect);
                     document.Open();
+
                     // Configuración de la fuente y estilo del texto
                     BaseFont baseFont = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                     iTextSharp.text.Font font = new iTextSharp.text.Font(baseFont, 12, iTextSharp.text.Font.NORMAL);
@@ -330,7 +547,7 @@ namespace Products
             {
                 MessageBox.Show($"Error creating PDF: {ex.Message}");
             }
-      
+
     }
 
 }
