@@ -1,5 +1,6 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Products.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace Products
     {
         private Dictionary<string, decimal> productPrices = new Dictionary<string, decimal>()
         {
-            { "Product 1", 10.99m },
+            { "Labial Maybelline", 110.99m },
             { "Product 2", 15.99m },
             { "Product 3", 8.50m },
             { "Product 4", 9.50m },
@@ -46,7 +47,7 @@ namespace Products
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string productName = "Product 1";
+            string productName = "Labial Maybelline";
             decimal productPrice = productPrices[productName];
             int quantity;
 
@@ -491,11 +492,12 @@ namespace Products
         {
             try
             {
-                string repositoryPath = @"C:\Users\Baamgo\Documents\GitHub\Products";
+                string repositoryPath = @"C:\Users\Migue\OneDrive\Desktop\kuyshu";
+
                 string directoryPath = Path.Combine(repositoryPath, "Reporte PDF");
                 string fileName = "ticket.pdf";
                 string filePath = Path.Combine(directoryPath, fileName);
-                string imagePath = @"C:\Users\Baamgo\source\repos\Products\Products\Resources\LarissaBeauty.JPG";
+                string imagePath = @"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\LarissaBeauty.JPG";
 
                 // Verificar si el directorio existe, si no, crearlo
                 if (!Directory.Exists(directoryPath))
