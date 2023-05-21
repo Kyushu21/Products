@@ -68,6 +68,7 @@
             this.textBoxContraseña.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxContraseña.Location = new System.Drawing.Point(326, 198);
             this.textBoxContraseña.Name = "textBoxContraseña";
+            this.textBoxContraseña.PasswordChar = '*';
             this.textBoxContraseña.Size = new System.Drawing.Size(376, 25);
             this.textBoxContraseña.TabIndex = 2;
             this.textBoxContraseña.Text = "CONTRASEÑA";
@@ -79,7 +80,7 @@
             this.labelLOGIN.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLOGIN.Location = new System.Drawing.Point(443, 9);
             this.labelLOGIN.Name = "labelLOGIN";
-            this.labelLOGIN.Size = new System.Drawing.Size(126, 40);
+            this.labelLOGIN.Size = new System.Drawing.Size(122, 40);
             this.labelLOGIN.TabIndex = 3;
             this.labelLOGIN.Text = "LOGIN";
             // 
@@ -105,6 +106,7 @@
             this.Btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Btncerrar.TabIndex = 6;
             this.Btncerrar.TabStop = false;
+            this.Btncerrar.Click += new System.EventHandler(this.Btncerrar_Click);
             // 
             // BtMinimizar
             // 
@@ -115,6 +117,7 @@
             this.BtMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.BtMinimizar.TabIndex = 5;
             this.BtMinimizar.TabStop = false;
+            this.BtMinimizar.Click += new System.EventHandler(this.BtMinimizar_Click);
             // 
             // Login
             // 
