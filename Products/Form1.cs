@@ -12,6 +12,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace Products
 {
@@ -43,49 +45,51 @@ namespace Products
             dataGridView1.Columns.Add("Price", "Price");
             dataGridView1.Columns.Add("Quantity", "Quantity");
             dataGridView1.Columns.Add("Subtotal", "Subtotal");
+            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button1.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\source\repos\Kyushu21\Products\Products\Resources\maybelline_labial.jpg");
         }
 
         private void button1_Click(object sender, EventArgs e)
+    {
+        string productName = "Labial Maybelline";
+        decimal productPrice = productPrices[productName];
+        int quantity;
+
+        if (int.TryParse(textBox1.Text, out quantity))
         {
-            string productName = "Labial Maybelline";
-            decimal productPrice = productPrices[productName];
-            int quantity;
+            decimal subtotal = productPrice * quantity;
+            totalCost += subtotal;
 
-            if (int.TryParse(textBox1.Text, out quantity))
+            MessageBox.Show($"Product: {productName}\nQuantity: {quantity}\nSubtotal: {subtotal:C}");
+
+            // Verificar si el producto ya está en el DataGridView
+            bool productExists = false;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                decimal subtotal = productPrice * quantity;
-                totalCost += subtotal;
-
-                MessageBox.Show($"Product: {productName}\nQuantity: {quantity}\nSubtotal: {subtotal:C}");
-
-                // Verificar si el producto ya está en el DataGridView
-                bool productExists = false;
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                if (row.Cells["Product"].Value != null && row.Cells["Product"].Value.ToString() == productName)
                 {
-                    if (row.Cells["Product"].Value != null && row.Cells["Product"].Value.ToString() == productName)
-                    {
-                        // Actualizar la cantidad y el subtotal en la fila existente
-                        row.Cells["Quantity"].Value = quantity;
-                        row.Cells["Subtotal"].Value = subtotal;
-                        productExists = true;
-                        break;
-                    }
-                }
-
-                // Si el producto no está en el DataGridView, agregar una nueva fila
-                if (!productExists)
-                {
-                    dataGridView1.Rows.Add(productId, productName, productPrice, quantity, subtotal);
-                    productId++; // Incrementar el Id para el próximo producto
+                    // Actualizar la cantidad y el subtotal en la fila existente
+                    row.Cells["Quantity"].Value = quantity;
+                    row.Cells["Subtotal"].Value = subtotal;
+                    productExists = true;
+                    break;
                 }
             }
-            else
+
+            // Si el producto no está en el DataGridView, agregar una nueva fila
+            if (!productExists)
             {
-                MessageBox.Show("Invalid quantity. Please enter a valid integer value.");
+                dataGridView1.Rows.Add(productId, productName, productPrice, quantity, subtotal);
+                productId++; // Incrementar el Id para el próximo producto
             }
         }
+        else
+        {
+            MessageBox.Show("Invalid quantity. Please enter a valid integer value.");
+        }
+    }
 
-        private void button2_Click(object sender, EventArgs e)
+    private void button2_Click(object sender, EventArgs e)
         {
             string productName = "Sérum concentrado Loreal Paris";
             decimal productPrice = productPrices[productName];
@@ -167,7 +171,7 @@ namespace Products
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string productName = "Product 4";
+            string productName = "L'óreal paris Máscara telescópica";
             decimal productPrice = productPrices[productName];
             int quantity;
 
