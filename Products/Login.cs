@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace Products
@@ -36,7 +37,28 @@ namespace Products
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(textBoxUsuario.Text== "Usuario"&& textBoxContraseña.Text == "Admin")
+            {
+                Form1 form1 = new Form1();
+                this.Hide();
+                form1.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("los datos ingresados son incorrectos");
+                    textBoxContraseña.Clear();
+                    textBoxUsuario.Clear();
+            }
+        }
 
+        private void BtMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Btncerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -142,7 +142,7 @@
             this.ticket.Name = "ticket";
             this.ticket.Size = new System.Drawing.Size(93, 43);
             this.ticket.TabIndex = 9;
-            this.ticket.Text = "button10";
+            this.ticket.Text = "Ticket";
             this.ticket.UseVisualStyleBackColor = true;
             this.ticket.Click += new System.EventHandler(this.ticket_Click);
             // 
@@ -181,7 +181,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(616, 440);
+            this.button11.Location = new System.Drawing.Point(619, 446);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(133, 23);
             this.button11.TabIndex = 15;
