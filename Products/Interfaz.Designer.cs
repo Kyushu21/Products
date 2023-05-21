@@ -30,6 +30,7 @@
         {
             this.Barra = new System.Windows.Forms.Panel();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.Contenedor = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // Barra
@@ -43,17 +44,28 @@
             // 
             // MenuVertical
             // 
+            this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 35);
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(200, 615);
             this.MenuVertical.TabIndex = 1;
             // 
+            // Contenedor
+            // 
+            this.Contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.Contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Contenedor.Location = new System.Drawing.Point(200, 35);
+            this.Contenedor.Name = "Contenedor";
+            this.Contenedor.Size = new System.Drawing.Size(1100, 615);
+            this.Contenedor.TabIndex = 2;
+            // 
             // Interfaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.Controls.Add(this.Contenedor);
             this.Controls.Add(this.MenuVertical);
             this.Controls.Add(this.Barra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -67,5 +79,6 @@
 
         private System.Windows.Forms.Panel Barra;
         private System.Windows.Forms.Panel MenuVertical;
+        private System.Windows.Forms.Panel Contenedor;
     }
 }

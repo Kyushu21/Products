@@ -492,12 +492,11 @@ namespace Products
         {
             try
             {
-                string repositoryPath = @"C:\Users\Migue\OneDrive\Desktop\kuyshu";
-
+                string repositoryPath = @"C:\Users\Baamgo\Documents\GitHub\Products";
                 string directoryPath = Path.Combine(repositoryPath, "Reporte PDF");
                 string fileName = "ticket.pdf";
                 string filePath = Path.Combine(directoryPath, fileName);
-                string imagePath = @"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\LarissaBeauty.JPG";
+                string imagePath = @"C:\Users\Baamgo\source\repos\Products\Products\Resources\LarissaBeauty.JPG";
 
                 // Verificar si el directorio existe, si no, crearlo
                 if (!Directory.Exists(directoryPath))
@@ -550,7 +549,7 @@ namespace Products
                 MessageBox.Show($"Error creating PDF: {ex.Message}");
             }
 
-    }
+        }
 
 }
 }
