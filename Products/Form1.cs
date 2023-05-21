@@ -19,11 +19,11 @@ namespace Products
     {
         private Dictionary<string, decimal> productPrices = new Dictionary<string, decimal>()
         {
-            { "Labial Maybelline", 110.99m },
-            { "Product 2", 15.99m },
-            { "Product 3", 8.50m },
-            { "Product 4", 9.50m },
-            { "Product 5", 11.99m },
+            { "Labial Maybelline", 1.99m },
+            { "Sérum concentrado Loreal Paris", 198.99m },
+            { "Sheglam Blush líquido", 250.99m },
+            { "Polvo Maybelline", 50.99m },
+            { "L'óreal paris Máscara telescópica", 11.99m },
             { "Product 6", 12.99m },
             { "Product 7", 13.50m },
             { "Product 8", 14.50m },
@@ -87,7 +87,7 @@ namespace Products
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string productName = "Product 2";
+            string productName = "Sérum concentrado Loreal Paris";
             decimal productPrice = productPrices[productName];
             int quantity;
 
@@ -127,7 +127,7 @@ namespace Products
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string productName = "Product 3";
+            string productName = "Sheglam Blush líquido";
             decimal productPrice = productPrices[productName];
             int quantity;
 
