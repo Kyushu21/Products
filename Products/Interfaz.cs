@@ -42,5 +42,27 @@ namespace Products
             this.WindowState= FormWindowState.Minimized;
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia de Form1
+            Form1 form1 = new Form1();
+
+            // Establecer TopLevel en false para que se pueda agregar al Panel
+            form1.TopLevel = false;
+
+            // Agregar el formulario al Panel Contenedor
+            Contenedor.Controls.Add(form1);
+
+            // Ajustar el tamaño del formulario al tamaño del Panel
+            form1.Size = Contenedor.Size;
+
+            // Ajustar la posición del formulario en el Panel
+            form1.Location = new Point(0, 0);
+
+            // Mostrar el formulario
+            form1.Show();
+        }
+
     }
 }
