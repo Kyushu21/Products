@@ -19,16 +19,16 @@ namespace Products
     {
         private Dictionary<string, decimal> productPrices = new Dictionary<string, decimal>()
         {
-            { "Labial Maybelline", 109.99m },
+            { "Labial Maybelline", 1.99m },
             { "Sérum concentrado Loreal Paris", 198.99m },
             { "Sheglam Blush líquido", 250.99m },
             { "Polvo Maybelline", 50.99m },
-            { "L'oreal paris Máscara telescópica eyelashes", 239.99m },
-            { "CeraVe crema reparadora", 249.99m },
-            { "Paleta para rostro Look-CYZONE", 229.99m },
-            { "Esmalte de uñas eternal (5)", 444.99m },
-            { "Delineador NYX PROFESSIONAL MAKEUP", 122.99m },
-            
+            { "L'óreal paris Máscara telescópica", 11.99m },
+            { "Product 6", 12.99m },
+            { "Product 7", 13.50m },
+            { "Product 8", 14.50m },
+            { "Product 9", 16.50m },
+            // Agrega más productos y sus precios aquí
         };
 
         private decimal totalCost = 0m;
@@ -167,7 +167,7 @@ namespace Products
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string productName = "Polvo Maybelline";
+            string productName = "Product 4";
             decimal productPrice = productPrices[productName];
             int quantity;
 
@@ -207,7 +207,7 @@ namespace Products
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string productName = "L'oreal paris Máscara telescópica eyelashes";
+            string productName = "Product 5";
             decimal productPrice = productPrices[productName];
             int quantity;
 
@@ -247,7 +247,7 @@ namespace Products
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string productName = "CeraVe crema reparadora";
+            string productName = "Product 6";
             decimal productPrice = productPrices[productName];
             int quantity;
 
@@ -287,7 +287,7 @@ namespace Products
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string productName = "Paleta para rostro Look-CYZONE";
+            string productName = "Product 7";
             decimal productPrice = productPrices[productName];
             int quantity;
 
@@ -327,7 +327,7 @@ namespace Products
 
         private void button8_Click(object sender, EventArgs e)
         {
-            string productName = "Esmalte de uñas eternal (5)";
+            string productName = "Product 8";
             decimal productPrice = productPrices[productName];
             int quantity;
 
@@ -367,7 +367,7 @@ namespace Products
 
         private void button9_Click(object sender, EventArgs e)
         {
-            string productName = "Delineador NYX PROFESSIONAL MAKEUP";
+            string productName = "Product 9";
             decimal productPrice = productPrices[productName];
             int quantity;
 
