@@ -21,15 +21,16 @@ namespace Products
     {
         private Dictionary<string, decimal> productPrices = new Dictionary<string, decimal>()
         {
-            { "Labial Maybelline", 1.99m },
+            {  "Labial Maybelline", 109.99m },
             { "Sérum concentrado Loreal Paris", 198.99m },
             { "Sheglam Blush líquido", 250.99m },
             { "Polvo Maybelline", 50.99m },
-            { "L'óreal paris Máscara telescópica", 11.99m },
-            { "Product 6", 12.99m },
-            { "Product 7", 13.50m },
-            { "Product 8", 14.50m },
-            { "Product 9", 16.50m },
+            { "L'oreal paris Máscara telescópica eyelashes", 239.99m },
+            { "CeraVe crema reparadora", 249.99m },
+            { "Paleta para rostro Look-CYZONE", 229.99m },
+            { "Esmalte de uñas eternal (5)", 444.99m },
+            { "Delineador NYX PROFESSIONAL MAKEUP", 122.99m },
+            
             // Agrega más productos y sus precios aquí
         };
 
@@ -46,7 +47,25 @@ namespace Products
             dataGridView1.Columns.Add("Quantity", "Quantity");
             dataGridView1.Columns.Add("Subtotal", "Subtotal");
             button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button1.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\source\repos\Kyushu21\Products\Products\Resources\maybelline_labial.jpg");
+            button1.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\maybelline_labial.jpg");
+            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button2.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\Serúm concentrado.jpg");
+            button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button3.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\Sheglam Blush líquido.jpg");
+            button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button4.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\Polvo Maybelline.jpg");
+            button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button5.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\L'oreal paris Máscara telescópica eyelashes.jpg");
+            button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button6.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\CeraVe crema reparadora.jpg");
+            button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button7.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\Paleta para rostro Look-CYZONE.jpg");
+            button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button8.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\Esmalte de uñas eternal (5).jpg");
+            button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button9.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\Delineador NYX PROFESSIONAL MAKEUP.jpg");
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -211,7 +230,7 @@ namespace Products
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string productName = "Product 5";
+            string productName = "L'oreal paris Máscara telescópica eyelashes";
             decimal productPrice = productPrices[productName];
             int quantity;
 
@@ -251,7 +270,7 @@ namespace Products
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string productName = "Product 6";
+            string productName = "CeraVe crema reparadora";
             decimal productPrice = productPrices[productName];
             int quantity;
 
@@ -291,7 +310,7 @@ namespace Products
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string productName = "Product 7";
+            string productName = "Paleta para rostro Look-CYZONE";
             decimal productPrice = productPrices[productName];
             int quantity;
 
@@ -331,7 +350,7 @@ namespace Products
 
         private void button8_Click(object sender, EventArgs e)
         {
-            string productName = "Product 8";
+            string productName = "Esmalte de uñas eternal (5)";
             decimal productPrice = productPrices[productName];
             int quantity;
 
@@ -371,7 +390,7 @@ namespace Products
 
         private void button9_Click(object sender, EventArgs e)
         {
-            string productName = "Product 9";
+            string productName = "Delineador NYX PROFESSIONAL MAKEUP";
             decimal productPrice = productPrices[productName];
             int quantity;
 
