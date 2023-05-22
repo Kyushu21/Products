@@ -46,7 +46,26 @@ namespace Products
             dataGridView1.Columns.Add("Quantity", "Quantity");
             dataGridView1.Columns.Add("Subtotal", "Subtotal");
             button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+
             button1.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\source\repos\Kyushu21\Products\Products\Resources\maybelline_labial.jpg");
+            button1.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\maybelline_labial.jpg");
+            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button2.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Serúm concentrado.jpg");
+            button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button3.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Sheglam Blush líquido.jpg");
+            button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button4.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Polvo Maybelline.jpg");
+            button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button5.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\L'oreal paris Máscara telescópica eyelashes.jpg");
+            button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button6.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\CeraVe crema reparadora.jpg");
+            button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button7.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Paleta para rostro Look-CYZONE.jpg");
+            button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button8.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Esmalte de uñas eternal (5).jpg");
+            button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button9.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Delineador NYX PROFESSIONAL MAKEUP.jpg");
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -171,7 +190,7 @@ namespace Products
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string productName = "L'óreal paris Máscara telescópica";
+            string productName = "L'oreal paris Máscara telescópica eyelashes";
             decimal productPrice = productPrices[productName];
             int quantity;
 
