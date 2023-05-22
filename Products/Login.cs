@@ -39,7 +39,7 @@ namespace Products
         {
             if(textBoxUsuario.Text== "Usuario"&& textBoxContraseña.Text == "Admin")
             {
-                Form1 form1 = new Form1();
+                Interfaz form1 = new Interfaz();
                 this.Hide();
                 form1.ShowDialog();
             }

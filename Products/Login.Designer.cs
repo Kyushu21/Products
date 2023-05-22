@@ -85,7 +85,7 @@
             // 
             this.labelLOGIN.AutoSize = true;
             this.labelLOGIN.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLOGIN.Location = new System.Drawing.Point(350, 24);
+            this.labelLOGIN.Location = new System.Drawing.Point(357, 30);
             this.labelLOGIN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLOGIN.Name = "labelLOGIN";
             this.labelLOGIN.Size = new System.Drawing.Size(100, 33);

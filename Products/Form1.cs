@@ -21,7 +21,7 @@ namespace Products
     {
         private Dictionary<string, decimal> productPrices = new Dictionary<string, decimal>()
         {
-            {  "Labial Maybelline", 109.99m },
+            { "Labial Maybelline", 109.99m },
             { "Sérum concentrado Loreal Paris", 198.99m },
             { "Sheglam Blush líquido", 250.99m },
             { "Polvo Maybelline", 50.99m },
@@ -47,9 +47,6 @@ namespace Products
             dataGridView1.Columns.Add("Quantity", "Quantity");
             dataGridView1.Columns.Add("Subtotal", "Subtotal");
             button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-<<<<<<< HEAD
-
-            button1.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\source\repos\Kyushu21\Products\Products\Resources\maybelline_labial.jpg");
             button1.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\maybelline_labial.jpg");
             button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             button2.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Serúm concentrado.jpg");
@@ -67,27 +64,6 @@ namespace Products
             button8.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Esmalte de uñas eternal (5).jpg");
             button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             button9.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Delineador NYX PROFESSIONAL MAKEUP.jpg");
-=======
-            button1.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\maybelline_labial.jpg");
-            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button2.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\Serúm concentrado.jpg");
-            button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button3.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\Sheglam Blush líquido.jpg");
-            button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button4.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\Polvo Maybelline.jpg");
-            button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button5.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\L'oreal paris Máscara telescópica eyelashes.jpg");
-            button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button6.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\CeraVe crema reparadora.jpg");
-            button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button7.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\Paleta para rostro Look-CYZONE.jpg");
-            button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button8.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\Esmalte de uñas eternal (5).jpg");
-            button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button9.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Migue\Source\Repos\Kyushu21\Products\Products\Resources\Delineador NYX PROFESSIONAL MAKEUP.jpg");
-
->>>>>>> cd0f83fac4a402cb82b2384694c45d9b135acb35
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -212,7 +188,7 @@ namespace Products
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string productName = "L'oreal paris Máscara telescópica eyelashes";
+            string productName = "Polvo Maybelline";
             decimal productPrice = productPrices[productName];
             int quantity;
 
@@ -481,7 +457,20 @@ namespace Products
             ticketBuilder.AppendLine("--------------------");
             ticketBuilder.AppendLine($"Subtotal: {totalCost:C}");
             ticketBuilder.AppendLine($"IVA ({ivaPercentage:P0}): {ivaAmount:C}");
-            ticketBuilder.AppendLine($"Total (MEX): {totalAmount:C}");
+
+            // Mostrar el monto total antes del descuento
+            ticketBuilder.AppendLine($"Total antes de descuento (MEX): {totalAmount:C}");
+
+            // Aplicar descuento del 15% si la compra supera los 800 pesos
+            if (totalCost > 800m)
+            {
+                decimal discount = totalCost * 0.15m;
+                totalAmount -= discount;
+            }
+
+            // Mostrar el monto total después del descuento
+            ticketBuilder.AppendLine($"Total después de descuento (MEX): {totalAmount:C}");
+
             ticketBuilder.AppendLine($"Total (USD): {totalAmountInDollars:N2}");
             string ticketText = ticketBuilder.ToString();
 
@@ -491,6 +480,8 @@ namespace Products
 
             dataGridView1.Rows.Clear();
         }
+
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
