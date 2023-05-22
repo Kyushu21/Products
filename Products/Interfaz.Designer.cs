@@ -48,7 +48,7 @@
             // 
             // Barra
             // 
-            this.Barra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.Barra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Barra.Controls.Add(this.btnRestaurar);
             this.Barra.Controls.Add(this.btnMaximizar);
             this.Barra.Controls.Add(this.btnMinimizar);
