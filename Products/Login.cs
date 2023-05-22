@@ -60,5 +60,10 @@ namespace Products
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void labelLOGIN_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

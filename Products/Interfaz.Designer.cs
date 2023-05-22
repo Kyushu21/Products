@@ -34,9 +34,9 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Contenedor = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.Barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
@@ -119,12 +119,24 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 35);
             this.MenuVertical.Name = "MenuVertical";
-<<<<<<< Updated upstream
-            this.MenuVertical.Size = new System.Drawing.Size(200, 615);
-=======
             this.MenuVertical.Size = new System.Drawing.Size(200, 697);
->>>>>>> Stashed changes
             this.MenuVertical.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(12, 155);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(182, 45);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Productos";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -142,39 +154,8 @@
             this.Contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Contenedor.Location = new System.Drawing.Point(200, 35);
             this.Contenedor.Name = "Contenedor";
-<<<<<<< Updated upstream
-            this.Contenedor.Size = new System.Drawing.Size(1100, 615);
-=======
             this.Contenedor.Size = new System.Drawing.Size(1100, 697);
->>>>>>> Stashed changes
             this.Contenedor.TabIndex = 2;
-            // 
-            // button1
-            // 
-<<<<<<< Updated upstream
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(12, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(182, 45);
-            this.button1.TabIndex = 1;
-=======
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(45, 143);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 63);
-            this.button1.TabIndex = 0;
->>>>>>> Stashed changes
-            this.button1.Text = "Productos";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Interfaz
             // 
