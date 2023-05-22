@@ -145,7 +145,16 @@
     <None Include="Resources\maximizar.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Paleta para rostro Look-CYZONE.jpg" />
+    <None Include="Resources\L%27oreal paris Máscara telescópica eyelashes.jpg" />
+    <None Include="Resources\CeraVe crema reparadora.jpg" />
+    <None Include="Resources\Esmalte de uñas eternal %285%29.jpg" />
+    <None Include="Resources\Delineador NYX PROFESSIONAL MAKEUP.jpg" />
     <Content Include="Resources\maybelline_labial.jpg" />
+    <None Include="Resources\Sheglam Blush líquido1.jpg" />
+    <None Include="Resources\Sheglam Blush líquido.jpg" />
+    <None Include="Resources\Polvo Maybelline.jpg" />
+    <None Include="Resources\Serúm concentrado.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
