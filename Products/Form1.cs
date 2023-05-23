@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -45,29 +46,11 @@ namespace Products
             dataGridView1.Columns.Add("Product", "Product");
             dataGridView1.Columns.Add("Price", "Price");
             dataGridView1.Columns.Add("Quantity", "Quantity");
-            dataGridView1.Columns.Add("Subtotal", "Subtotal");
-            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button1.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\maybelline_labial.jpg");
-            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button2.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Serúm concentrado.jpg");
-            button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button3.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Sheglam Blush líquido.jpg");
-            button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button4.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Polvo Maybelline.jpg");
-            button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button5.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\L'oreal paris Máscara telescópica eyelashes.jpg");
-            button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button6.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\CeraVe crema reparadora.jpg");
-            button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button7.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Paleta para rostro Look-CYZONE.jpg");
-            button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button8.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Esmalte de uñas eternal (5).jpg");
-            button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button9.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Baamgo\Source\Repos\Kyushu21\Products\Products\Resources\Delineador NYX PROFESSIONAL MAKEUP.jpg");
+            dataGridView1.Columns.Add("Subtotal", "Subtotal");      
         }
 
         private void button1_Click(object sender, EventArgs e)
-    {
+        {
         string productName = "Labial Maybelline";
         decimal productPrice = productPrices[productName];
         int quantity;
@@ -438,8 +421,9 @@ namespace Products
             decimal totalAmountInDollars = totalAmount / 17;
             decimal totalAmountInPesos = totalAmount * 17;
 
+
             StringBuilder ticketBuilder = new StringBuilder();
-            ticketBuilder.AppendLine("------ Ticket ------");
+            ticketBuilder.AppendLine("-------- Ticket ---------");
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
@@ -450,7 +434,7 @@ namespace Products
                     int quantity = (int)row.Cells["Quantity"].Value;
                     decimal subtotal = (decimal)row.Cells["Subtotal"].Value;
 
-                    ticketBuilder.AppendLine($"Product: {productName}  Price: {productPrice:C}  Quantity: {quantity}  Subtotal: {subtotal:C}");
+                    ticketBuilder.AppendLine($"Product: {productName}  Price: {productPrice:C}  Quantity: {quantity}  ");
                 }
             }
 
@@ -480,6 +464,7 @@ namespace Products
 
             dataGridView1.Rows.Clear();
         }
+
 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -528,64 +513,85 @@ namespace Products
         {
             try
             {
-                string repositoryPath = @"C:\Users\Baamgo\Documents\GitHub\Products";
-                string directoryPath = Path.Combine(repositoryPath, "Reporte PDF");
-                string fileName = "ticket.pdf";
-                string filePath = Path.Combine(directoryPath, fileName);
-                string imagePath = @"C:\Users\Baamgo\source\repos\Products\Products\Resources\LarissaBeauty.JPG";
+                // Mostrar el cuadro de diálogo de Guardar archivo
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+                saveFileDialog.Title = "Save PDF File";
+                saveFileDialog.FileName = "ticket.pdf";
 
-                // Verificar si el directorio existe, si no, crearlo
-                if (!Directory.Exists(directoryPath))
+                // Verificar si el usuario ha seleccionado una ubicación de archivo válida
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    Directory.CreateDirectory(directoryPath);
-                }
+                    string filePath = saveFileDialog.FileName;
 
-                // Verificar si el archivo ya existe, si sí, generar un nombre único
-                int counter = 1;
-                while (File.Exists(filePath))
-                {
-                    fileName = $"ticket_{counter}.pdf";
-                    filePath = Path.Combine(directoryPath, fileName);
-                    counter++;
-                }
+                    // Obtener el directorio del archivo seleccionado
+                    string directoryPath = Path.GetDirectoryName(filePath);
 
-                using (Document document = new Document())
-                {
-                    PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
+                    // Verificar si el directorio existe, si no, crearlo
+                    if (!Directory.Exists(directoryPath))
+                    {
+                        Directory.CreateDirectory(directoryPath);
+                    }
 
-                    // Establecer el color de fondo del documento
-                    iTextSharp.text.Rectangle rect = new iTextSharp.text.Rectangle(document.PageSize);
-                    rect.BackgroundColor = new iTextSharp.text.BaseColor(242, 216, 223);
-                    document.SetPageSize(rect);
-                    document.Open();
+                    // Verificar si el archivo ya existe, si sí, generar un nombre único
+                    int counter = 1;
+                    while (File.Exists(filePath))
+                    {
+                        string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(filePath);
+                        string fileExtension = Path.GetExtension(filePath);
+                        filePath = Path.Combine(directoryPath, $"{fileNameWithoutExtension}_{counter}{fileExtension}");
+                        counter++;
+                    }
 
-                    // Configuración de la fuente y estilo del texto
-                    BaseFont baseFont = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
-                    iTextSharp.text.Font font = new iTextSharp.text.Font(baseFont, 12, iTextSharp.text.Font.NORMAL);
+                    using (Document document = new Document(new iTextSharp.text.Rectangle(iTextSharp.text.PageSize.A7.Width, 500)))
+                    {
+                        // Establecer márgenes más grandes
+                        document.SetMargins(10f, 10f, 20f, 20f);
 
-                    // Obtener el texto del RichTextBox
-                    string text = richTextBox1.Text;
+                        PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
 
-                    // Agregar la imagen al documento
-                    iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(imagePath);
-                    image.ScaleToFit(300, 200); // Ajusta el tamaño de la imagen según tus necesidades
-                    document.Add(image);
+                        // Establecer el color de fondo del documento
+                        iTextSharp.text.Rectangle rect = new iTextSharp.text.Rectangle(document.PageSize);
+                        rect.BackgroundColor = new iTextSharp.text.BaseColor(242, 216, 223);
+                        document.SetPageSize(rect);
+                        document.Open();
 
-                    // Crear el párrafo con el contenido del RichTextBox
-                    Paragraph paragraph = new Paragraph(text, font);
-                    document.Add(paragraph);
+                        // Configuración del estilo del texto
+                        iTextSharp.text.Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+                        iTextSharp.text.Font contentFont = FontFactory.GetFont(FontFactory.HELVETICA, 12, iTextSharp.text.Font.NORMAL, BaseColor.DARK_GRAY);
 
-                    document.Close();
+                        // Obtener el texto del RichTextBox
+                        string text = richTextBox1.Text;
 
-                    MessageBox.Show($"PDF created successfully: {filePath}");
+                        // Crear una celda para el contenido
+                        PdfPCell cell = new PdfPCell(new Phrase(text, contentFont));
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 20f;
+
+                        // Crear una tabla y agregar la celda
+                        PdfPTable table = new PdfPTable(1);
+                        table.WidthPercentage = 100;
+                        table.AddCell(cell);
+
+                        // Agregar la tabla al documento
+                        document.Add(table);
+
+                        document.Close();
+
+                        MessageBox.Show($"PDF created successfully: {filePath}");
+
+                        // Abrir el archivo PDF con la aplicación predeterminada
+                        System.Diagnostics.Process.Start(filePath);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error creating PDF: {ex.Message}");
             }
-
         }
 
-}
+
+    }
+
 }

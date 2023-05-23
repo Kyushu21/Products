@@ -64,5 +64,24 @@ namespace Products
             form1.Show();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Mostrar un mensaje de confirmación al usuario
+            DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar sesión?", "Confirmar cierre de sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Crear una instancia del formulario "Login"
+                Login loginForm = new Login();
+
+                // Mostrar el formulario "Login"
+                loginForm.Show();
+
+                // Cerrar el formulario actual
+                this.Close();
+            }
+        }
+
+
     }
 }

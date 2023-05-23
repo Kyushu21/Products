@@ -166,6 +166,7 @@
     <None Include="Resources\maximizar.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\maybelline_labial1.jpg" />
     <None Include="Resources\Paleta para rostro Look-CYZONE.jpg" />
     <None Include="Resources\L%27oreal paris Máscara telescópica eyelashes.jpg" />
     <None Include="Resources\CeraVe crema reparadora.jpg" />
